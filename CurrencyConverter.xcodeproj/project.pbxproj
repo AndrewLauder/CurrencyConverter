@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4959C8241ACBA6800086BAD9 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4959C8231ACBA6800086BAD9 /* NavigationViewController.m */; };
 		498456661ACB901F006F54DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 498456651ACB901F006F54DF /* main.m */; };
 		498456691ACB901F006F54DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 498456681ACB901F006F54DF /* AppDelegate.m */; };
 		4984566C1ACB901F006F54DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4984566B1ACB901F006F54DF /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4959C8221ACBA6800086BAD9 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		4959C8231ACBA6800086BAD9 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		498456601ACB901F006F54DF /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		498456641ACB901F006F54DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		498456651ACB901F006F54DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,11 +86,13 @@
 			children = (
 				498456671ACB901F006F54DF /* AppDelegate.h */,
 				498456681ACB901F006F54DF /* AppDelegate.m */,
-				4984566A1ACB901F006F54DF /* ViewController.h */,
-				4984566B1ACB901F006F54DF /* ViewController.m */,
-				4984566D1ACB901F006F54DF /* Main.storyboard */,
 				498456701ACB901F006F54DF /* Images.xcassets */,
 				498456721ACB901F006F54DF /* LaunchScreen.xib */,
+				4984566D1ACB901F006F54DF /* Main.storyboard */,
+				4959C8221ACBA6800086BAD9 /* NavigationViewController.h */,
+				4959C8231ACBA6800086BAD9 /* NavigationViewController.m */,
+				4984566A1ACB901F006F54DF /* ViewController.h */,
+				4984566B1ACB901F006F54DF /* ViewController.m */,
 				498456631ACB901F006F54DF /* Supporting Files */,
 			);
 			path = CurrencyConverter;
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4959C8241ACBA6800086BAD9 /* NavigationViewController.m in Sources */,
 				4984566C1ACB901F006F54DF /* ViewController.m in Sources */,
 				498456691ACB901F006F54DF /* AppDelegate.m in Sources */,
 				498456661ACB901F006F54DF /* main.m in Sources */,
