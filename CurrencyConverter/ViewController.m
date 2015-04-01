@@ -106,10 +106,10 @@
 {
     // Source = targetValue * targetRate * sourceRate
     double sourceValue = [[_targetCurrencyValue text] doubleValue] * _targetCurrencyRate * _sourceCurrencyRate;
-    NSLog(@"_sourceCurrencyRate: %f", _sourceCurrencyRate);
-    NSLog(@"_targetCurrencyRate: %f", _targetCurrencyRate);
-    NSLog(@"_targetCurrencyValue: %@", _targetCurrencyValue.text);
-    NSLog(@"computeSourceValue = %f", sourceValue);
+//    NSLog(@"_sourceCurrencyRate: %f", _sourceCurrencyRate);
+//    NSLog(@"_targetCurrencyRate: %f", _targetCurrencyRate);
+//    NSLog(@"_targetCurrencyValue: %@", _targetCurrencyValue.text);
+//    NSLog(@"computeSourceValue = %f", sourceValue);
     
     [_sourceCurrencyValue setText:[[NSNumber numberWithDouble:sourceValue] stringValue]];
 }
@@ -118,10 +118,10 @@
 {
     // Source = targetValue * targetRate * sourceRate
     double targetValue = [[_sourceCurrencyValue text] doubleValue] * _targetCurrencyRate * _sourceCurrencyRate;
-    NSLog(@"_sourceCurrencyRate: %f", _sourceCurrencyRate);
-    NSLog(@"_targetCurrencyRate: %f", _targetCurrencyRate);
-    NSLog(@"_sourceCurrencyValue: %@", _targetCurrencyValue.text);
-    NSLog(@"computeTargetValue = %f", targetValue);
+//    NSLog(@"_sourceCurrencyRate: %f", _sourceCurrencyRate);
+//    NSLog(@"_targetCurrencyRate: %f", _targetCurrencyRate);
+//    NSLog(@"_sourceCurrencyValue: %@", _targetCurrencyValue.text);
+//    NSLog(@"computeTargetValue = %f", targetValue);
     
     [_targetCurrencyValue setText:[[NSNumber numberWithDouble:targetValue] stringValue]];
 }
@@ -222,7 +222,7 @@
     NSString* currencyName = [locale displayNameForKey:NSLocaleCurrencyCode
                                                  value:_currencyNames[row]];
 
-    NSLog(@"didSelectRow: %@, %d, %d", currencyName, row, component);
+//    NSLog(@"didSelectRow: %@, %d, %d", currencyName, row, component);
     if (_sourceCurrencySelected)
     {
         _sourceCurrency = _currencyNames[row];
