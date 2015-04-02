@@ -16,6 +16,11 @@
                                 <rect key="frame" x="169" y="126" width="135" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Source"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changeSourceCurrency:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KbY-zd-0bk"/>
                                 </connections>
@@ -30,6 +35,11 @@
                                 <rect key="frame" x="169" y="192" width="135" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Target"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changeTargetCurrency:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ugT-22-BZM"/>
                                 </connections>

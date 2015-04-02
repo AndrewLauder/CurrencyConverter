@@ -17,16 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     _currencyNames = [[NSMutableArray alloc] init];
     _currencyValues = [[NSMutableArray alloc] init];
-    [[self.sourceCurrencyButton layer] setBorderWidth:1.0f];
     [[self.sourceCurrencyButton layer] setBorderColor:[UIColor blueColor].CGColor];
-    [self.sourceCurrencyButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [[self.targetCurrencyButton layer] setBorderWidth:1.0f];
     [[self.targetCurrencyButton layer] setBorderColor:[UIColor blueColor].CGColor];
-    [self.targetCurrencyButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
     [self getCurrencyRates];
     
     [self hidePicker];
@@ -67,17 +62,14 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)changeSourceCurrency:(id)sender {
-    NSLog(@"changeSourceCurrency");
     _sourceCurrencySelected = YES;
     [self showPicker];
 }
 
 - (IBAction)changeTargetCurrency:(id)sender {
-    NSLog(@"changeTargetCurrency");
     _sourceCurrencySelected = NO;
     [self showPicker];
 }
@@ -104,25 +96,13 @@
 
 - (void)computeSourceValue
 {
-    // Source = targetValue * targetRate * sourceRate
-    double sourceValue = [[_targetCurrencyValue text] doubleValue] * _targetCurrencyRate * _sourceCurrencyRate;
-//    NSLog(@"_sourceCurrencyRate: %f", _sourceCurrencyRate);
-//    NSLog(@"_targetCurrencyRate: %f", _targetCurrencyRate);
-//    NSLog(@"_targetCurrencyValue: %@", _targetCurrencyValue.text);
-//    NSLog(@"computeSourceValue = %f", sourceValue);
-    
+    double sourceValue = [[_targetCurrencyValue text] doubleValue] * _sourceCurrencyRate / _targetCurrencyRate;
     [_sourceCurrencyValue setText:[[NSNumber numberWithDouble:sourceValue] stringValue]];
 }
 
 - (void)computeTargetValue
 {
-    // Source = targetValue * targetRate * sourceRate
-    double targetValue = [[_sourceCurrencyValue text] doubleValue] * _targetCurrencyRate * _sourceCurrencyRate;
-//    NSLog(@"_sourceCurrencyRate: %f", _sourceCurrencyRate);
-//    NSLog(@"_targetCurrencyRate: %f", _targetCurrencyRate);
-//    NSLog(@"_sourceCurrencyValue: %@", _targetCurrencyValue.text);
-//    NSLog(@"computeTargetValue = %f", targetValue);
-    
+    double targetValue = [[_sourceCurrencyValue text] doubleValue] * _targetCurrencyRate / _sourceCurrencyRate;
     [_targetCurrencyValue setText:[[NSNumber numberWithDouble:targetValue] stringValue]];
 }
 
@@ -174,7 +154,7 @@
                                        value:@"EUR"];
     [_targetCurrencyButton setTitle:currencyName forState:UIControlStateNormal];
     
-    int currIndex = [_currencyNames indexOfObject:@"EUR"];
+    unsigned long currIndex = [_currencyNames indexOfObject:@"EUR"];
     NSNumber *currencyValue = [NSNumber numberWithDouble:[[_currencyValues objectAtIndex:currIndex] doubleValue]];
     [_targetCurrencyValue setText:[currencyValue stringValue]];
     _targetCurrencyRate = [currencyValue doubleValue];
@@ -197,12 +177,12 @@
 #pragma mark -
 #pragma mark UIPickerView
 
-- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
 }
 
-- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return _currencyNames.count;
 }
@@ -222,7 +202,6 @@
     NSString* currencyName = [locale displayNameForKey:NSLocaleCurrencyCode
                                                  value:_currencyNames[row]];
 
-//    NSLog(@"didSelectRow: %@, %d, %d", currencyName, row, component);
     if (_sourceCurrencySelected)
     {
         _sourceCurrency = _currencyNames[row];
